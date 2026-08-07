@@ -1,0 +1,49 @@
+{
+  "title": "MURDLE — The Retail Lab Distraction",
+  "subtitle": "4 suspects, 4 tools, 4 locations",
+  "storyTitle": "The Retail Lab Distraction",
+  "storyHtml": "<p>A distracting alert storm hit the Dynavics service desk while a critical LS Central retail configuration changed unexpectedly. The incident was traced to one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Use the Business Central and LS Central evidence to close the case.</p>",
+  "clues": [
+    {
+      "text": "Adam Sellers was preparing the API integration brief."
+    },
+    {
+      "text": "The Business Central laptop was not in the Support Hub."
+    },
+    {
+      "text": "Kieran Coles was working on the AL extension."
+    },
+    {
+      "text": "Kieran Coles was in the Business Central Sandbox."
+    },
+    {
+      "text": "The Business Central laptop was in the LS Central Retail Lab."
+    },
+    {
+      "text": "The incident was detected in the LS Central Retail Lab."
+    }
+  ],
+  "suspects": [
+    "Ian Storer",
+    "Rob Jones",
+    "Kieran Coles",
+    "Adam Sellers"
+  ],
+  "weapons": [
+    "API Integration Brief",
+    "LS Central Handheld",
+    "Business Central Laptop",
+    "AL Extension"
+  ],
+  "rooms": [
+    "Project Room",
+    "Support Hub",
+    "LS Central Retail Lab",
+    "Business Central Sandbox"
+  ],
+  "solution": {
+    "suspect": "Ian Storer",
+    "weapon": "Business Central Laptop",
+    "room": "LS Central Retail Lab"
+  }
+}

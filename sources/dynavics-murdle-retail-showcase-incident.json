@@ -1,0 +1,46 @@
+{
+  "title": "MURDLE — The Retail Showcase Incident",
+  "subtitle": "4 suspects, 4 tools, 4 locations",
+  "storyTitle": "The Retail Showcase Incident",
+  "storyHtml": "<p>A client retail showcase failed during a Dynavics demonstration, leaving a critical LS Central configuration in the wrong state. The evidence points to one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Trace the Business Central and LS Central activity to resolve the incident.</p>",
+  "clues": [
+    {
+      "text": "The LS Central POS Terminal was not in the Client Launch Room."
+    },
+    {
+      "text": "Kieran Coles was in the Partner Demo Suite."
+    },
+    {
+      "text": "Adam Sellers was moving the LS Central POS Terminal."
+    },
+    {
+      "text": "Ian Storer was working with the Data Migration Package."
+    },
+    {
+      "text": "The disrupted retail showcase was in the Retail Experience Lab."
+    }
+  ],
+  "suspects": [
+    "Ian Storer",
+    "Dan Jones",
+    "Adam Sellers",
+    "Kieran Coles"
+  ],
+  "weapons": [
+    "LS Central POS Terminal",
+    "Data Migration Package",
+    "Integration Test Device",
+    "Support Escalation Note"
+  ],
+  "rooms": [
+    "Client Launch Room",
+    "Support Hub",
+    "Retail Experience Lab",
+    "Partner Demo Suite"
+  ],
+  "solution": {
+    "suspect": "Adam Sellers",
+    "weapon": "LS Central POS Terminal",
+    "room": "Retail Experience Lab"
+  }
+}

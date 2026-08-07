@@ -2,10 +2,8 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Dynavics MURDLE puzzle",
   "type": "object",
-  "required": ["mode", "edition", "title", "subtitle", "storyTitle", "storyHtml", "clues", "suspects", "weapons", "rooms", "solution"],
+  "required": ["title", "subtitle", "storyTitle", "storyHtml", "clues", "suspects", "weapons", "rooms", "solution"],
   "properties": {
-    "mode": { "type": "string", "enum": ["mini", "standard"] },
-    "edition": { "type": "string", "enum": ["Mini", "Standard"] },
     "title": { "type": "string", "minLength": 1 },
     "subtitle": { "type": "string", "minLength": 1 },
     "storyTitle": { "type": "string", "minLength": 1 },

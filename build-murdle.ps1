@@ -16,13 +16,12 @@ function Resolve-ProjectPath([string]$Path) {
 
 function Get-DefaultOutputName([string]$SourcePath) {
   $baseName = [IO.Path]::GetFileNameWithoutExtension($SourcePath)
-  if ($baseName -in @('mini', 'standard')) { return "$baseName-murdle.html" }
   return "$baseName.html"
 }
 
 function Build-Puzzle([string]$SourcePath, [string]$OutputPath) {
   $puzzle = Get-Content -LiteralPath $SourcePath -Raw | ConvertFrom-Json -AsHashtable
-  $required = 'mode', 'edition', 'title', 'subtitle', 'storyTitle', 'storyHtml', 'clues', 'suspects', 'weapons', 'rooms', 'solution'
+  $required = 'title', 'subtitle', 'storyTitle', 'storyHtml', 'clues', 'suspects', 'weapons', 'rooms', 'solution'
   foreach ($field in $required) {
     if (-not $puzzle.ContainsKey($field) -or [string]::IsNullOrWhiteSpace($puzzle[$field])) {
       throw "$SourcePath requires '$field'."
@@ -33,8 +32,6 @@ function Build-Puzzle([string]$SourcePath, [string]$OutputPath) {
   if ($count -lt 3 -or $puzzle.weapons.Count -ne $count -or $puzzle.rooms.Count -ne $count) {
     throw "$SourcePath must contain the same number of suspects, weapons, and rooms, with at least three in each category."
   }
-  if ($puzzle.mode -eq 'mini' -and $count -ne 3) { throw "$SourcePath is mini mode and requires exactly three entries in each category." }
-  if ($puzzle.mode -eq 'standard' -and $count -ne 5) { throw "$SourcePath is standard mode and requires exactly five entries in each category." }
   if ($puzzle.storyHtml -match '<\s*/?\s*(script|style|iframe)\b') { throw "$SourcePath storyHtml cannot contain script, style, or iframe elements." }
   if ($puzzle.solution.suspect -notin $puzzle.suspects -or $puzzle.solution.weapon -notin $puzzle.weapons -or $puzzle.solution.room -notin $puzzle.rooms) {
     throw "$SourcePath solution must use entries from the suspect, weapon, and room lists."
@@ -46,7 +43,7 @@ function Build-Puzzle([string]$SourcePath, [string]$OutputPath) {
   $puzzleJson = ($puzzle | ConvertTo-Json -Depth 10 -Compress).Replace('</', '<\/')
   $html = [IO.File]::ReadAllText($templatePath)
   $html = $html.Replace('__PAGE_TITLE__', [string]$puzzle.title)
-  $html = $html.Replace('__EDITION__', [string]$puzzle.edition)
+  $html = $html.Replace('__GRID_SIZE__', "$count by $count")
   $html = $html.Replace('__PUZZLE_JSON__', $puzzleJson)
 
   [IO.Directory]::CreateDirectory((Split-Path -Parent $OutputPath)) | Out-Null

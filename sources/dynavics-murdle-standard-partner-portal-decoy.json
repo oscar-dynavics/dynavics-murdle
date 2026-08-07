@@ -1,0 +1,55 @@
+{
+  "title": "MURDLE — The Partner Portal Decoy",
+  "subtitle": "5 suspects, 5 tools, 5 locations",
+  "storyTitle": "The Partner Portal Decoy",
+  "storyHtml": "<p>A misleading access alert drew the Dynavics team into a frantic investigation while a partner configuration was changed elsewhere. The evidence identifies one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Follow the Business Central and LS Central trail to isolate the culprit.</p>",
+  "clues": [
+    {
+      "text": "Rob Jones was in the Architecture Studio."
+    },
+    {
+      "text": "Kieran Coles was at the Client Demo Suite."
+    },
+    {
+      "text": "The Data Migration Toolkit was used in the Support Hub."
+    },
+    {
+      "text": "Dan Jones was not in the Partner Portal."
+    },
+    {
+      "text": "Ian Storer was assigned the Data Migration Toolkit."
+    },
+    {
+      "text": "Rob Jones was preparing the API Integration Brief."
+    },
+    {
+      "text": "The Production Deployment Laptop was connected through the Partner Portal."
+    }
+  ],
+  "suspects": [
+    "Dan Jones",
+    "Kieran Coles",
+    "Rob Jones",
+    "Adam Sellers",
+    "Ian Storer"
+  ],
+  "weapons": [
+    "Business Central Debugger",
+    "LS Central Handheld",
+    "API Integration Brief",
+    "Production Deployment Laptop",
+    "Data Migration Toolkit"
+  ],
+  "rooms": [
+    "Project Room",
+    "Client Demo Suite",
+    "Architecture Studio",
+    "Partner Portal",
+    "Support Hub"
+  ],
+  "solution": {
+    "suspect": "Adam Sellers",
+    "weapon": "Production Deployment Laptop",
+    "room": "Partner Portal"
+  }
+}

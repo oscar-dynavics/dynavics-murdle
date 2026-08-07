@@ -3,7 +3,7 @@
 Create one valid JSON object for a Dynavics MURDLE puzzle. Return JSON only, with no Markdown fences or explanation.
 
 Requirements:
-- Use `mode: "mini"` and `edition: "Mini"` with exactly 3 unique suspects, weapons, and rooms; or use `mode: "standard"` and `edition: "Standard"` with exactly 5 in each category.
+- Use the same number of unique suspects, weapons, and rooms, with at least 3 in each category. The puzzle grid size is derived automatically.
 - Keep all names short enough to fit in a compact notebook grid.
 - Include a title, subtitle, story title, short `storyHtml`, at least one clue, and a solution using entries from the three lists.
 - `storyHtml` may use only `p`, `ul`, `li`, `strong`, `em`, and `span class="small"` elements. Do not use scripts, styles, links, images, or iframes.
@@ -12,10 +12,8 @@ Requirements:
 
 ```json
 {
-  "mode": "mini",
-  "edition": "Mini",
-  "title": "Mini MURDLE — Title",
-  "subtitle": "Mini mode: 3 suspects, 3 weapons, 3 locations",
+  "title": "MURDLE — Title",
+  "subtitle": "3 suspects, 3 weapons, 3 locations",
   "storyTitle": "Story heading",
   "storyHtml": "<p>Short puzzle setup.</p>",
   "clues": [

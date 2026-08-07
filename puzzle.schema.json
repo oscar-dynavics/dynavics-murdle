@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dynavics MURDLE puzzle",
+  "type": "object",
+  "required": ["mode", "edition", "title", "subtitle", "storyTitle", "storyHtml", "clues", "suspects", "weapons", "rooms", "solution"],
+  "properties": {
+    "mode": { "type": "string", "enum": ["mini", "standard"] },
+    "edition": { "type": "string", "enum": ["Mini", "Standard"] },
+    "title": { "type": "string", "minLength": 1 },
+    "subtitle": { "type": "string", "minLength": 1 },
+    "storyTitle": { "type": "string", "minLength": 1 },
+    "storyHtml": { "type": "string", "minLength": 1 },
+    "clues": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["text"],
+        "properties": { "text": { "type": "string", "minLength": 1 } },
+        "additionalProperties": false
+      }
+    },
+    "suspects": { "$ref": "#/$defs/category" },
+    "weapons": { "$ref": "#/$defs/category" },
+    "rooms": { "$ref": "#/$defs/category" },
+    "solution": {
+      "type": "object",
+      "required": ["suspect", "weapon", "room"],
+      "properties": {
+        "suspect": { "type": "string" },
+        "weapon": { "type": "string" },
+        "room": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "category": {
+      "type": "array",
+      "minItems": 3,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  },
+  "additionalProperties": false
+}

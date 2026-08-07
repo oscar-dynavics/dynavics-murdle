@@ -1,0 +1,19 @@
+{
+  "mode": "mini",
+  "edition": "Mini",
+  "title": "Mini MURDLE — Password Reset",
+  "subtitle": "Mini mode: 3 suspects, 3 weapons, 3 locations",
+  "storyTitle": "The Quiet Server Shutdown",
+  "storyHtml": "<p>A new analyst reported a suspicious login from a secure workstation just as a payroll export changed. Three suspects were in the room, each with a distinct method and location.</p><ul><li>Only one person was the culprit.</li><li>Each suspect is tied to exactly one weapon and one location.</li><li>Solve your notebook one deduction at a time.</li></ul><p class=\"small\">Use clues to eliminate possibilities, then confirm your final accusation.</p>",
+  "clues": [
+    { "text": "The suspect was last seen entering from the rooftop side entrance." },
+    { "text": "A second witness says Bea carried the ledger." },
+    { "text": "A server log confirms the flask was found beside Cora's desk." },
+    { "text": "Cora was not at the Archive when the breach happened." },
+    { "text": "Bea was never seen carrying the Scalpel." }
+  ],
+  "suspects": ["Ari", "Bea", "Cora"],
+  "weapons": ["Ledger", "Scalpel", "Flask"],
+  "rooms": ["Archive", "Kitchen", "Rooftop"],
+  "solution": { "suspect": "Ari", "weapon": "Scalpel", "room": "Rooftop" }
+}

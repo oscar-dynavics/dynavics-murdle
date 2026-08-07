@@ -1,0 +1,25 @@
+{
+  "mode": "standard",
+  "edition": "Standard",
+  "title": "Standard MURDLE — Quiet Launch Room Heist",
+  "subtitle": "Standard mode: 5 suspects, 5 weapons, 5 locations",
+  "storyTitle": "The Quiet Launch Room Heist",
+  "storyHtml": "<p>Dynavics security flags flagged activity around a confidential product roadmap launch. Five team members entered three zones, each with a different tool and one evidence marker.</p><ul><li>Every suspect used one weapon and occupied one room.</li><li>One full combination is the culprit setup.</li><li>Work through the story clues and keep your notebook consistent.</li></ul><p class=\"small\">Need more elimination? Use the notebook logic and cross out each impossible pair.</p>",
+  "clues": [
+    { "text": "Aya was in the Rooftop." },
+    { "text": "Aya was not holding the Drone." },
+    { "text": "Bruno had the Drone." },
+    { "text": "Bruno was in the Atrium." },
+    { "text": "Chen was in the Archive." },
+    { "text": "Chen was not on the Rooftop." },
+    { "text": "Chen carried the Umbrella." },
+    { "text": "Dana was in the Lounge." },
+    { "text": "Dana carried the Candle." },
+    { "text": "Elias used the USB key." },
+    { "text": "The USB came from the Dock." }
+  ],
+  "suspects": ["Aya", "Bruno", "Chen", "Dana", "Elias"],
+  "weapons": ["Ledger", "Drone", "USB", "Umbrella", "Candle"],
+  "rooms": ["Rooftop", "Atrium", "Archive", "Lounge", "Dock"],
+  "solution": { "suspect": "Aya", "weapon": "Ledger", "room": "Rooftop" }
+}

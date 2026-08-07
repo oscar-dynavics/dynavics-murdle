@@ -1,0 +1,43 @@
+{
+  "title": "The Mystery of the Distracting Demo",
+  "subtitle": "3 suspects, 3 weapons, 3 locations",
+  "storyTitle": "Byte’s First Dynavics Case",
+  "storyHtml": "<p>Byte never forgot his first few cases, but that was only because he never forgot any of his cases. However, this Dynavics mystery was particularly memorable.</p><p>Each suspect brought one item to one location, but on that day, only one was responsible for sabotaging the demonstration.</p><p>Go through the clues one at a time, placing the information provided onto the Deduction Grid.</p>",
+  "clues": [
+    {
+      "text": "An anonymous Teams message read: RETNIRP LEBAL A DAH RACSO."
+    },
+    {
+      "text": "The Barcode Scanner was certainly not inside the Portal Room."
+    },
+    {
+      "text": "Jose’s fingerprint was found in the Forge Lab."
+    },
+    {
+      "text": "Rob was not inside the Dynavics Office."
+    },
+    {
+      "text": "The Laptop was clearly used to sabotage the demonstration."
+    }
+  ],
+  "suspects": [
+    "Oscar",
+    "Jose",
+    "Rob"
+  ],
+  "weapons": [
+    "Laptop",
+    "Barcode Scanner",
+    "Label Printer"
+  ],
+  "rooms": [
+    "Dynavics Office",
+    "Forge Lab",
+    "Portal Room"
+  ],
+  "solution": {
+    "suspect": "Rob",
+    "weapon": "Laptop",
+    "room": "Portal Room"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "title": "Mystery at the Guinness Storehouse",
+  "subtitle": "5 suspects, 5 items, 5 locations",
+  "storyTitle": "The Mystery of the Missing AI Assistant",
+  "storyHtml": "<p>Byte was enjoying the Dynavics AI Event at the Guinness Storehouse when the demonstration’s AI assistant suddenly disappeared from every screen.</p><p>Each member of the Marketing team brought one suspicious item to one location, but only one person sabotaged the demonstration.</p><p>Between presentations, networking and perfectly poured pints, Byte gathered the evidence and began marking the Deduction Grid.</p>",
+  "clues": [
+    {
+      "text": "The suspect in the Gravity Bar was Vickie."
+    },
+    {
+      "text": "The Speaker Pass was brought by a member of the AI Event Committee, and only Jacob was allowed to join the AI Event Committee."
+    },
+    {
+      "text": "An AI Clicker was reflected in Lou’s glasses."
+    },
+    {
+      "text": "Traces of a Pint of Guinness were found in the Presentation Hall."
+    },
+    {
+      "text": "Whoever was on the Storehouse Floor had either the Pint of Guinness or the Event Microphone."
+    },
+    {
+      "text": "Aleia was definitely not alongside the person who brought the Event Microphone."
+    },
+    {
+      "text": "Either Lou brought the AI Clicker or Lou was in the Archive Room, but not both."
+    },
+    {
+      "text": "The Pint of Guinness was involved in the disappearance of the AI assistant."
+    }
+  ],
+  "suspects": [
+    "Mark",
+    "Lou",
+    "Vickie",
+    "Jacob",
+    "Aleia"
+  ],
+  "weapons": [
+    "Speaker Pass",
+    "Pint of Guinness",
+    "AI Clicker",
+    "Laptop Charger",
+    "Event Microphone"
+  ],
+  "rooms": [
+    "Gravity Bar",
+    "Presentation Hall",
+    "Storehouse Floor",
+    "Networking Lounge",
+    "Archive Room"
+  ],
+  "solution": {
+    "suspect": "Aleia",
+    "weapon": "Pint of Guinness",
+    "room": "Presentation Hall"
+  }
+}

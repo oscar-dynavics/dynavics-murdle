@@ -31,11 +31,3 @@ Requirements:
   }
 }
 ```
-
-Save the response as a `.json` file in `sources`, then build it with:
-
-```powershell
-pwsh ./build-murdle.ps1 -Source ./sources/mini.json
-```
-
-The output is written to `puzzles/mini-murdle.html` or `puzzles/standard-murdle.html` based on `mode`. Pass `-Output` to choose a different file name or location.

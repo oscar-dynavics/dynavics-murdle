@@ -83,7 +83,6 @@ button:focus-visible,select:focus-visible,.grid-btn:focus-visible{outline:3px so
       <div class="actions">
         <button class="primary" onclick="checkAnswer()">Check Answer</button>
         <button onclick="resetAll()">Reset grid</button>
-        <button onclick="reveal()">Reveal answer</button>
       </div>
       <div id="result" class="result"></div>
     </section>
@@ -331,12 +330,6 @@ function resetAll(){
   document.querySelectorAll('#clues input[type=checkbox]').forEach(ch=>{ ch.checked=false; ch.disabled=false; ch.closest('.clue').classList.remove('complete'); });
   renderAll();
   setResult('Notebook reset to blank.');
-}
-
-function reveal(){
-  if (!confirm('Reveal the official solution?')) return;
-  const s = PUZZLE.solution;
-  setResult(`Solution revealed: ${s.suspect} with ${s.weapon} in ${s.room}.` );
 }
 
 function escapeHtml(str){

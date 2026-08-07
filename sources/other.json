@@ -1,0 +1,64 @@
+{
+  "title": "MURDLE — Murder at the White-Collar Prison",
+  "subtitle": "6 suspects, 6 weapons, 6 locations",
+  "storyTitle": "The Murder of Inspector Irratino",
+  "storyHtml": "<p>Deductive Logico arrived at a luxurious white-collar prison, where Inspector Irratino had been murdered.</p><p>Each suspect brought one weapon to one location, but only one was the murderer.</p><p>Logico examined the clues one at a time, marking each discovery on the Deduction Grid.</p>",
+  "clues": [
+    {
+      "text": "Agent Fuchsia had a Poisoned Cake."
+    },
+    {
+      "text": "The second-tallest suspect had not been in the Spa."
+    },
+    {
+      "text": "Lady Violet had a weapon made of alcohol."
+    },
+    {
+      "text": "Murdle Volume 2 was found beside a video game console in the Rec Room."
+    },
+    {
+      "text": "A single cufflink was found at the Guard Tower, a great place for a photograph."
+    },
+    {
+      "text": "Sister Lapis thought she was in love with the person who brought the Gold Watch."
+    },
+    {
+      "text": "A paper detector gave a positive reading on Viscount Eminence."
+    },
+    {
+      "text": "Frosting was found beside a king-sized bed in the Private Suite."
+    },
+    {
+      "text": "The Golden Handcuffs were clearly used to commit the murder."
+    }
+  ],
+  "suspects": [
+    "Viscount Eminence",
+    "Principal Applegreen",
+    "Major Red",
+    "Agent Fuchsia",
+    "Sister Lapis",
+    "Lady Violet"
+  ],
+  "weapons": [
+    "Exploding Cufflinks",
+    "Cabernet Toilet Wine",
+    "Poisoned Cake",
+    "Golden Handcuffs",
+    "Gold Watch",
+    "Murdle Volume 2"
+  ],
+  "rooms": [
+    "Movie Theatre",
+    "Spa",
+    "Private Suite",
+    "Rec Room",
+    "Michelin Cafeteria",
+    "Guard Tower"
+  ],
+  "solution": {
+    "suspect": "Sister Lapis",
+    "weapon": "Golden Handcuffs",
+    "room": "Spa"
+  }
+}

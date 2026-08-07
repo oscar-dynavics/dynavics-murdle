@@ -1,385 +1,43 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dynavics MURDLE</title>
   <style>
-    :root { --dynavics-green: #062417; --dynavics-green-support: #064a23; --dynavics-accent: #99f221; --dynavics-bg: #f6fbf2; --cell-unknown: #eef4ec; --cell-yes: #e6f6db; --cell-no: #fde9e9; --text: #062417; --line: #cde8ab; }
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--text); background: var(--dynavics-bg); line-height: 1.45; }
-    .wrap { max-width: 1200px; margin: 0 auto; padding: 24px; }
-    header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 12px; border-bottom: 2px solid var(--dynavics-accent); padding-bottom: 10px; }
-    h1 { margin: 0; color: var(--dynavics-green); letter-spacing: 0.2px; font-size: 1.7rem; }
-    h2 { margin: 0 0 6px; color: var(--dynavics-green); font-size: 1.2rem; }
-    p { margin-top: 0; }
-    .subtitle { font-weight: 700; color: var(--dynavics-green-support); }
-    .logo { width: 72px; height: 72px; object-fit: contain; }
-    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0 16px; }
-    button, select { border: 1px solid var(--dynavics-green); background: white; color: var(--dynavics-green); padding: 10px 14px; border-radius: 12px; cursor: pointer; font-weight: 700; transition: transform .04s ease; }
-    button:hover, select:hover { background: #eef7dc; }
-    button:active { transform: translateY(1px); }
-    button.primary { background: var(--dynavics-accent); border-color: #6ea816; color: #072816; }
-    button:disabled { opacity: .55; cursor: not-allowed; }
-    .layout { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
-    .panel { border: 1px solid var(--line); background: white; border-radius: 16px; padding: 14px; box-shadow: 0 2px 0 #d7e8ba; }
-    .clue { border: 1px dashed var(--line); border-radius: 12px; padding: 10px; margin: 8px 0; display: flex; align-items: flex-start; gap: 10px; background: #fcfffb; }
-    .clue .text { flex: 1; }
-    .logic-grid { width: 100%; border-collapse: collapse; margin: 8px 0 16px; table-layout: fixed; }
-    .logic-grid th, .logic-grid td { border: 1px solid var(--line); text-align: center; padding: 0; }
-    .logic-grid thead th { background: #f3f9ea; color: #0a3316; font-size: 0.9rem; padding: 8px 4px; }
-    .logic-grid th.side { width: 120px; text-align: left; padding: 6px 8px; font-weight: 700; background: #ecf6da; }
-    .cell-btn { width: 100%; height: 46px; border: 0; background: var(--cell-unknown); color: #12391f; font-size: 1rem; font-weight: 700; cursor: pointer; padding: 0; }
-    .cell-btn.yes { background: var(--cell-yes); color: #0f4d1b; }
-    .cell-btn.no { background: var(--cell-no); color: #6a1c1c; }
-    .cell-btn:focus-visible { outline: 2px solid var(--dynavics-accent); outline-offset: 2px; }
-    .hint { color: var(--dynavics-green-support); margin: 4px 0 8px; font-size: 0.95rem; }
-    .result { border-top: 2px solid var(--dynavics-accent); margin-top: 10px; padding-top: 10px; min-height: 50px; white-space: pre-wrap; font-weight: 700; }
-    .ok { color: #0a6b21; } .bad { color: #8f1f1f; } .tiny { font-size: .9rem; color: #304f36; }
-    .footer { margin-top: 20px; background: var(--dynavics-green); color: var(--dynavics-accent); text-align: right; padding: 14px 16px; border-radius: 8px; font-size: 0.88rem; }
-    @media (max-width: 1000px) { .layout { grid-template-columns: 1fr; } .logic-grid th.side { width: 96px; font-size: 0.92rem; } .cell-btn { height: 42px; font-size: 0.95rem; } }
+    :root{--g:#0a2f18;--a:#99f221;--line:#d5e7bb;}
+    body{margin:0;font-family:Inter,Arial,sans-serif;background:#f7fcf1;color:#16301a}
+    .wrap{max-width:900px;margin:40px auto;padding:20px}
+    .panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:0 2px 0 #e5f0d1}
+    img{width:72px;height:72px}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .logo{display:flex;gap:10px;align-items:center}
+    a{display:block;text-decoration:none;padding:14px;border:1px solid #c9deb6;border-radius:12px;background:#f3fce6;margin:8px 0;color:#0b3714}
+    a:hover{background:#e5f7d6}
+    h1{margin:0}
+    .small{color:#3c5f3b}
+    @media (max-width:700px){.cards{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div><h1>Dynavics MURDLE <span style="color:#99f221">Catch-up</span></h1><div class="subtitle">First internal company MURDLE — ready for easy + standard modes</div></div>
-      <img class="logo" src="data:image/png;base64,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" alt="Dynavics logo" />
-    </header>
-
-    <div class="toolbar">
-      <span class="tiny">Mode:</span>
-      <button class="primary" onclick="switchMode('mini')">Mini MURDLE (3×3)</button>
-      <button onclick="switchMode('standard')">Standard MURDLE (5×5)</button>
-      <button onclick="resetPuzzle()">Reset Grid</button>
-      <button onclick="revealSolution()">Reveal Answer</button>
-      <button onclick="copyCurrentState()">Copy State</button>
+    <div class="panel">
+      <div class="logo"><img src="data:image/png;base64,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" alt="Dynavics"/><div>
+        <h1>Dynavics MURDLE</h1>
+        <div class="small">Company catch-up version · pick a mode</div>
+      </div></div>
+      <p class="small">Self-contained, no internet required after download.</p>
+      <div class="cards">
+        <a href="mini-murdle.html">
+          <h3>Mini MURDLE</h3>
+          <p>Easy 3×3 puzzle, quick first solve. Includes clues, story setup, and full notebook.</p>
+        </a>
+        <a href="standard-murdle.html">
+          <h3>Standard MURDLE</h3>
+          <p>Expanded 5×5 puzzle for fuller deduction and more deduction practice.</p>
+        </a>
+      </div>
     </div>
-
-    <div id="story" class="panel"></div>
-
-    <div class="layout" style="margin-top:12px;">
-      <section class="panel">
-        <h2>Clues</h2>
-        <div id="clues"></div>
-      </section>
-
-      <section class="panel">
-        <h2>Make your accusation</h2>
-        <label class="tiny">Suspect:</label>
-        <select id="acc-sus"></select>
-        <label class="tiny">Weapon:</label>
-        <select id="acc-weap"></select>
-        <label class="tiny">Location:</label>
-        <select id="acc-room"></select>
-        <div style="margin-top:8px; display:flex; gap:10px; flex-wrap:wrap;">
-          <button class="primary" onclick="checkAccusation()">Check Answer</button>
-          <button onclick="showSolutionPanel()">Check Deduction Status</button>
-        </div>
-        <div id="result" class="result"></div>
-      </section>
-    </div>
-
-    <div class="layout" style="margin-top:12px;">
-      <section class="panel">
-        <h2>Suspect ↔ Weapon Notebook</h2>
-        <div id="gridSW"></div>
-        <p class="hint">Click a cell: ? → ✓ (it happened) → ✗ (it did not happen) → ?.</p>
-      </section>
-      <section class="panel">
-        <h2>Suspect ↔ Location Notebook</h2>
-        <div id="gridSR"></div>
-      </section>
-    </div>
-
-    <div class="footer">Built for the Dynavics company catch-up · internal puzzle only · Dynavics © 2026</div>
   </div>
-
-  <script>
-    const PUZZLES = {
-      mini: {
-        id: 'mini',
-        title: 'Mini MURDLE: “Quarterly Password Reset”',
-        subtitle: 'Easy 3×3 for warmup and first-round play.',
-        suspects: ['Ari', 'Bea', 'Cora'],
-        weapons: ['Ledger', 'Scalpel', 'Flask'],
-        rooms: ['Archive', 'Kitchen', 'Rooftop'],
-        solution: {suspect: 'Ari', weapon: 'Ledger', room: 'Rooftop'},
-        clues: [
-          {id: 'm1', text: 'Ari was seen in the Rooftop at the time of the incident.', relation: {type: 'S_ROOM', sign: 1, row: 'Ari', col: 'Rooftop'}},
-          {id: 'm2', text: 'Bea was carrying the Scalpel.', relation: {type: 'S_WEAPON', sign: 1, row: 'Bea', col: 'Scalpel'}},
-          {id: 'm3', text: 'The Flask was held by Cora.', relation: {type: 'S_WEAPON', sign: 1, row: 'Cora', col: 'Flask'}},
-          {id: 'm4', text: 'Cora was not in the Archive.', relation: {type: 'S_ROOM', sign: -1, row: 'Cora', col: 'Archive'}}
-        ]
-      },
-      standard: {
-        id: 'standard',
-        title: 'Standard MURDLE: “The Quiet Launch Room Heist”',
-        subtitle: 'Harder 5×5 with fuller elimination required.',
-        suspects: ['Aya', 'Bruno', 'Chen', 'Dana', 'Elias'],
-        weapons: ['Ledger', 'Drone', 'USB', 'Umbrella', 'Candle'],
-        rooms: ['Rooftop', 'Atrium', 'Archive', 'Lounge', 'Dock'],
-        solution: {suspect: 'Aya', weapon: 'Ledger', room: 'Rooftop'},
-        clues: [
-          {id: 's1', text: 'Aya was in the Rooftop.', relation: {type: 'S_ROOM', sign: 1, row: 'Aya', col: 'Rooftop'}},
-          {id: 's2', text: 'Aya was not holding the Drone.', relation: {type: 'S_WEAPON', sign: -1, row: 'Aya', col: 'Drone'}},
-          {id: 's3', text: 'Bruno had the Drone.', relation: {type: 'S_WEAPON', sign: 1, row: 'Bruno', col: 'Drone'}},
-          {id: 's4', text: 'Bruno was in the Atrium.', relation: {type: 'S_ROOM', sign: 1, row: 'Bruno', col: 'Atrium'}},
-          {id: 's5', text: 'Dana was in the Lounge.', relation: {type: 'S_ROOM', sign: 1, row: 'Dana', col: 'Lounge'}},
-          {id: 's6', text: 'Dana had the Candle.', relation: {type: 'S_WEAPON', sign: 1, row: 'Dana', col: 'Candle'}},
-          {id: 's7', text: 'Chen was in the Archive.', relation: {type: 'S_ROOM', sign: 1, row: 'Chen', col: 'Archive'}},
-          {id: 's8', text: 'Chen had the Umbrella.', relation: {type: 'S_WEAPON', sign: 1, row: 'Chen', col: 'Umbrella'}},
-          {id: 's9', text: 'The USB was used by Elias.', relation: {type: 'S_WEAPON', sign: 1, row: 'Elias', col: 'USB'}},
-          {id: 's10', text: 'The USB was found in the Dock.', relation: {type: 'S_ROOM', sign: 1, row: 'Elias', col: 'Dock'}},
-          {id: 's11', text: 'Chen was not in the Rooftop.', relation: {type: 'S_ROOM', sign: -1, row: 'Chen', col: 'Rooftop'}},
-          {id: 's12', text: 'Aya was not holding the Candle.', relation: {type: 'S_WEAPON', sign: -1, row: 'Aya', col: 'Candle'}}
-        ]
-      }
-    };
-
-    let currentMode = 'mini';
-    let puzzle = PUZZLES[currentMode];
-    let suspectWeapon = [];
-    let suspectRoom = [];
-
-    const stateToSymbol = {0:'?', 1:'✓', [-1]:'✗'};
-
-    function createMatrix(size) { return Array.from({ length: size }, () => Array(size).fill(0)); }
-    function indexOf(array, value) { return array.indexOf(value); }
-
-    function resetState() {
-      const n = puzzle.suspects.length;
-      suspectWeapon = createMatrix(n);
-      suspectRoom = createMatrix(n);
-      const checkboxNodes = document.querySelectorAll('#clues input[type="checkbox"]');
-      checkboxNodes.forEach(el => { el.checked = false; el.disabled = false; });
-      setSelectors();
-      renderAll();
-      setResult('');
-    }
-
-    function setSelectors() {
-      const susSel = document.getElementById('acc-sus');
-      const weSel = document.getElementById('acc-weap');
-      const roSel = document.getElementById('acc-room');
-      susSel.innerHTML = '';
-      weSel.innerHTML = '';
-      roSel.innerHTML = '';
-      puzzle.suspects.forEach(x => { susSel.options[susSel.options.length] = new Option(x, x); });
-      puzzle.weapons.forEach(x => { weSel.options[weSel.options.length] = new Option(x, x); });
-      puzzle.rooms.forEach(x => { roSel.options[roSel.options.length] = new Option(x, x); });
-    }
-
-    function setCell(matrix, rowIdx, colIdx, value) {
-      const current = matrix[rowIdx][colIdx];
-      if (current === value) { matrix[rowIdx][colIdx] = 0; return; }
-      if (value === 1) {
-        for (let c = 0; c < matrix[rowIdx].length; c++) { if (c !== colIdx) matrix[rowIdx][c] = -1; }
-        for (let r = 0; r < matrix.length; r++) { if (r !== rowIdx) matrix[r][colIdx] = -1; }
-      }
-      matrix[rowIdx][colIdx] = value;
-    }
-
-    function applyConstraint(clue) {
-      const rel = clue.relation;
-      const row = indexOf(puzzle.suspects, rel.row);
-      if (row < 0) return;
-      if (rel.type === 'S_ROOM') {
-        const col = indexOf(puzzle.rooms, rel.col);
-        setCell(suspectRoom, row, col, rel.sign);
-      } else if (rel.type === 'S_WEAPON') {
-        const col = indexOf(puzzle.weapons, rel.col);
-        setCell(suspectWeapon, row, col, rel.sign);
-      }
-      autoIntraInference();
-      renderAll();
-    }
-
-    function applyClue(index, checked) {
-      if (!checked) return;
-      const clue = PUZZLES[currentMode].clues[index];
-      if (!clue) return;
-      applyConstraint(clue);
-      const checkbox = document.getElementById('clue-' + PUZZLES[currentMode].id + '-' + index);
-      if (checkbox) checkbox.disabled = true;
-    }
-
-    function autoIntraInference() {
-      const infer = (matrix) => {
-        const n = matrix.length;
-        for (let r = 0; r < n; r++) {
-          const row = matrix[r];
-          const yesCount = row.filter(v => v === 1).length;
-          const zeroIdx = row.map((v,i)=>v===0?i:-1).filter(i=>i>=0);
-          if (yesCount === 0 && zeroIdx.length === 1) setCell(matrix, r, zeroIdx[0], 1);
-          if (yesCount === 1) {
-            for (let c = 0; c < n; c++) { if (row[c] !== 1) row[c] = row[c]; }
-          }
-        }
-        for (let c = 0; c < n; c++) {
-          let colVals = matrix.map(row=>row[c]);
-          const yesCount = colVals.filter(v => v === 1).length;
-          const zeroIdx = [];
-          for (let r = 0; r < n; r++) if (colVals[r] === 0) zeroIdx.push(r);
-          if (yesCount === 0 && zeroIdx.length === 1) setCell(matrix, zeroIdx[0], c, 1);
-        }
-      };
-      infer(suspectWeapon);
-      infer(suspectRoom);
-    }
-
-    function renderGrid(containerId, matrix, rowLabels, colLabels, matrixKind) {
-      const container = document.getElementById(containerId);
-      const table = document.createElement('table');
-      table.className = 'logic-grid';
-
-      const thead = document.createElement('thead');
-      const hrow = document.createElement('tr');
-      hrow.innerHTML = '<th class="side"></th>' + colLabels.map(c => `<th>${c}</th>`).join('');
-      thead.appendChild(hrow); table.appendChild(thead);
-
-      const tbody = document.createElement('tbody');
-      for (let r = 0; r < matrix.length; r++) {
-        const tr = document.createElement('tr');
-        const th = document.createElement('th');
-        th.className = 'side';
-        th.textContent = rowLabels[r];
-        tr.appendChild(th);
-
-        for (let c = 0; c < matrix[r].length; c++) {
-          const td = document.createElement('td');
-          const btn = document.createElement('button');
-          btn.type = 'button';
-          btn.className = 'cell-btn';
-          const v = matrix[r][c];
-          if (v === 1) btn.classList.add('yes');
-          if (v === -1) btn.classList.add('no');
-          btn.textContent = stateToSymbol[v];
-          btn.onclick = () => {
-            const next = v === 0 ? 1 : (v === 1 ? -1 : 0);
-            setCell(matrix, r, c, next);
-            autoIntraInference();
-            renderAll();
-          };
-          btn.setAttribute('aria-label', `${matrixKind} ${rowLabels[r]} with ${colLabels[c]} is ${v === 1 ? 'true' : v === -1 ? 'false' : 'unknown'}`);
-          td.appendChild(btn);
-          tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-      }
-      table.appendChild(tbody);
-      container.replaceChildren(table);
-    }
-
-    function checkSolvedStatus(matrix) {
-      const n = matrix.length;
-      const rowOK = matrix.every(row => row.some(v => v === 1));
-      const colOK = [...Array(n).keys()].every(c => matrix.some(row => row[c] === 1));
-      return rowOK && colOK;
-    }
-
-    function checkAccusation() {
-      const sus = document.getElementById('acc-sus').value;
-      const we = document.getElementById('acc-weap').value;
-      const rm = document.getElementById('acc-room').value;
-      const s = puzzle.solution;
-      const solvedSW = checkSolvedStatus(suspectWeapon);
-      const solvedSR = checkSolvedStatus(suspectRoom);
-      let msg = '';
-      if (sus === s.suspect && we === s.weapon && rm === s.room) {
-        msg += '✅ You solved it! Perfect accusation.';
-      } else {
-        msg += '❌ Not correct yet. Try another suspect/weapon/location.';
-      }
-      if (!solvedSW || !solvedSR) msg += "\nNotebook status: one or both grids are still incomplete. Keep marking deductions.";
-      else msg += "\nNotebook status: both grids are fully determined.";
-      setResult(msg);
-    }
-
-    function revealSolution() {
-      if (!confirm('Reveal the full solved assignment for this mode?')) return;
-      const s = puzzle.solution;
-      setResult(`Solution: Murderer ${s.suspect} · Weapon ${s.weapon} · Location ${s.room}`);
-      const rs = indexOf(puzzle.suspects, s.suspect);
-      const rw = indexOf(puzzle.weapons, s.weapon);
-      const rr = indexOf(puzzle.rooms, s.room);
-      setCell(suspectWeapon, rs, rw, 1);
-      setCell(suspectRoom, rs, rr, 1);
-      autoIntraInference();
-      renderAll();
-    }
-
-    function setResult(msg) {
-      const result = document.getElementById('result');
-      result.textContent = msg;
-      result.classList.remove('ok','bad');
-      if (msg.includes('✅')) result.classList.add('ok');
-      if (msg.includes('❌')) result.classList.add('bad');
-    }
-
-    function showSolutionPanel() {
-      const solvedSW = checkSolvedStatus(suspectWeapon);
-      const solvedSR = checkSolvedStatus(suspectRoom);
-      setResult(`Suspect↔Weapon complete: ${solvedSW ? 'yes' : 'no'}
-Suspect↔Location complete: ${solvedSR ? 'yes' : 'no'}`);
-    }
-
-    function copyCurrentState() {
-      const payload = {mode: currentMode, gridWeapon: suspectWeapon, gridRoom: suspectRoom};
-      const txt = JSON.stringify(payload);
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(txt).then(() => setResult('State copied to clipboard.'));
-      } else {
-        setResult('Clipboard API unavailable in this browser.');
-      }
-    }
-
-    function renderClues() {
-      const target = document.getElementById('clues');
-      target.innerHTML = '';
-      const heading = document.createElement('div');
-      heading.innerHTML = `<p class="tiny"><strong>${puzzle.title}</strong><br>${puzzle.subtitle}</p>`;
-      target.appendChild(heading);
-      puzzle.clues.forEach((clue, idx) => {
-        const div = document.createElement('label');
-        div.className = 'clue';
-        const cbId = `clue-${puzzle.id}-${idx}`;
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = cbId;
-        checkbox.onchange = () => applyClue(idx, checkbox.checked);
-        const text = document.createElement('div');
-        text.className = 'text';
-        text.textContent = clue.text;
-        div.appendChild(checkbox);
-        div.appendChild(text);
-        target.appendChild(div);
-      });
-    }
-
-    function renderStory() {
-      const story = document.getElementById('story');
-      story.className = 'panel';
-      story.innerHTML = `<strong>Current board:</strong> ${puzzle.title}<p class="tiny">${puzzle.subtitle}</p>`;
-    }
-
-    function renderAll() {
-      renderGrid('gridSW', suspectWeapon, puzzle.suspects, puzzle.weapons, 'Suspect/Weapon');
-      renderGrid('gridSR', suspectRoom, puzzle.suspects, puzzle.rooms, 'Suspect/Location');
-    }
-
-    function switchMode(mode) {
-      if (!PUZZLES[mode]) return;
-      currentMode = mode;
-      puzzle = PUZZLES[currentMode];
-      renderStory();
-      renderClues();
-      resetState();
-    }
-
-    function resetPuzzle() { resetState(); setResult('Grid reset. Start again from clues + logic.'); }
-
-    switchMode('mini');
-  </script>
 </body>
 </html>

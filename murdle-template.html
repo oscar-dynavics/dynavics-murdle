@@ -21,7 +21,7 @@ h2{margin:0 0 8px}.header h1{color:var(--white)}.header .badge{color:var(--lime)
 .layout{display:grid;grid-template-columns:1.18fr 1fr;gap:16px;margin-top:16px}
 .intro{margin:16px 0}.accusation{margin-top:16px}.accusation-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}.accusation-field{display:grid;gap:6px}.accusation-field label{font-weight:700;color:var(--forest-deep)}.choice{position:relative}.native-select{position:absolute;opacity:0;pointer-events:none}.choice-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:46px;padding:10px 14px;border:1px solid var(--forest);border-radius:999px;background:var(--white);color:var(--muted);font:500 .9rem/1 var(--font);text-align:left}.choice-trigger::after{content:'';width:7px;height:7px;margin-left:12px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s ease}.choice.open .choice-trigger{border-color:var(--lime);box-shadow:0 0 0 3px var(--lime);color:var(--forest-deep)}.choice.open .choice-trigger::after{transform:rotate(225deg) translateY(-2px)}.choice-menu{position:absolute;z-index:2;top:calc(100% + 6px);left:0;right:0;display:none;padding:6px;border:1px solid var(--forest);border-radius:0 16px 16px 16px;background:var(--white);box-shadow:0 12px 24px rgba(6,36,23,.16)}.choice.open .choice-menu{display:grid;gap:2px}.choice-option{width:100%;min-width:0;padding:10px 12px;border:0;border-radius:10px;background:transparent;color:var(--forest-deep);font:500 .9rem/1 var(--font);text-align:left}.choice-option:hover,.choice-option:focus-visible,.choice-option.selected{background:var(--lime);color:var(--forest-deep)}
 .panel{background:var(--white);border:1px solid var(--line);border-radius:28px 28px 28px 0;padding:22px}
-.notebook-panel{margin-top:16px}.notebook-wrap{overflow:auto}.notebook-grid{width:min(100%,680px);border-collapse:collapse;table-layout:fixed}.notebook-grid th,.notebook-grid td{border:1px solid var(--line);padding:0;text-align:center}.notebook-grid .notebook-group{padding:8px 4px;background:var(--paper);color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.notebook-grid .notebook-heading{padding:8px 4px;background:var(--forest);color:var(--white);font-size:.74rem;white-space:nowrap}.notebook-grid .notebook-side{padding:8px;background:#e8efe7;color:var(--forest-deep);font-size:.84rem;text-align:left;white-space:nowrap}.notebook-grid .notebook-inactive{background:var(--forest-deep);color:var(--white)}.notebook-inactive div{display:grid;min-height:100%;place-content:center;gap:6px;padding:16px}.notebook-inactive strong{color:var(--lime);font-size:.78rem;letter-spacing:.1em}.notebook-inactive span{font-size:.82rem;color:#d5e2d7}
+.notebook-panel{margin-top:16px}.notebook-wrap{overflow:auto}.notebook-grid{width:100%;border-collapse:collapse;table-layout:fixed}.notebook-grid th,.notebook-grid td{border:1px solid var(--line);padding:0;text-align:center}.notebook-grid .notebook-group{padding:8px 4px;background:var(--paper);color:var(--muted);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.notebook-grid .notebook-heading{overflow:hidden;padding:8px;background:#e8efe7;color:var(--forest-deep);font-size:.84rem;text-align:left;text-overflow:ellipsis;white-space:nowrap}.notebook-grid .notebook-row-group{padding:8px 4px;background:var(--paper);color:var(--muted);font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}.notebook-grid .notebook-side{padding:8px;background:#e8efe7;color:var(--forest-deep);font-size:.84rem;text-align:left;white-space:nowrap}.notebook-grid .notebook-column-separator{border-left:2px solid var(--forest)}.notebook-grid .notebook-row-separator>th,.notebook-grid .notebook-row-separator>td{border-top:2px solid var(--forest)}.notebook-grid .notebook-inactive{background:var(--forest-deep);color:var(--white)}.notebook-inactive div{display:grid;min-height:100%;place-content:center;gap:6px;padding:16px}.notebook-inactive strong{color:var(--lime);font-size:.78rem;letter-spacing:.1em}.notebook-inactive span{font-size:.82rem;color:#d5e2d7}
 button,select{border:1px solid var(--forest);background:var(--white);color:var(--forest-deep);border-radius:999px;padding:10px 14px;font:700 .9rem/1 var(--font);cursor:pointer}
 button{min-width:120px}button:hover{background:#edf5ea}button.primary{background:var(--lime);border-color:var(--lime)}button.primary:hover{background:var(--lime-hover)}
 button:focus-visible,select:focus-visible,.grid-btn:focus-visible{outline:3px solid #79b600;outline-offset:2px}
@@ -31,7 +31,7 @@ button:focus-visible,select:focus-visible,.grid-btn:focus-visible{outline:3px so
 .note{font-size:.9rem;color:var(--muted)}.small{font-size:.86rem;color:var(--muted)}.gridWrap{overflow:auto}
 .grid{width:min(100%,420px);margin-inline:auto;border-collapse:collapse;table-layout:fixed}.grid th,.grid td{border:1px solid var(--line);text-align:center;padding:0}.grid thead th{background:var(--forest);padding:8px 4px;color:var(--white);font-size:.85rem}.grid th.side{width:20%;text-align:left;padding:8px;background:#e8efe7;font-size:.9rem}
 .grid-btn{display:block;width:100%;min-width:0;aspect-ratio:1;border:0;border-radius:0;background:var(--cell-unknown);font-weight:700;font-size:1.05rem}.grid-btn:hover{background:#e2ece0}.grid-btn[data-state='1']{background:var(--cell-yes);color:#285200}.grid-btn[data-state='-1']{background:var(--cell-no);color:#852d22}.grid-btn[data-state='2']{background:#fff4bd;color:#756100}
-.legend{display:flex;gap:12px;align-items:center;margin-top:12px;font-size:.85rem;color:var(--muted)}.dot{display:inline-flex;align-items:center;gap:4px}.result{padding:12px 0;border-top:1px solid var(--line);margin-top:14px;min-height:58px;white-space:pre-wrap;font-weight:700}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.footer{margin-top:16px;background:var(--forest-deep);color:var(--white);text-align:left;padding:16px 20px;border-radius:0 24px 24px 24px;font-size:.84rem}.ok{color:#236500}.bad{color:#a33021}
+.legend{display:flex;gap:12px;align-items:center;margin-top:12px;font-size:.85rem;color:var(--muted)}.dot{display:inline-flex;align-items:center;gap:4px}.result{padding:12px 0;border-top:1px solid var(--line);margin-top:14px;min-height:58px;white-space:pre-wrap;font-weight:700}.state-mark{display:inline-grid;width:24px;height:24px;place-items:center;vertical-align:middle;border:1px solid var(--line);font-size:1rem;line-height:1}.state-mark.blank{background:var(--cell-unknown)}.state-mark.cross{background:var(--cell-no);color:#852d22}.state-mark.check{background:var(--cell-yes);color:#285200}.state-mark.question{background:#fff4bd;color:#756100}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.footer{margin-top:16px;background:var(--forest-deep);color:var(--white);text-align:left;padding:16px 20px;border-radius:0 24px 24px 24px;font-size:.84rem}.ok{color:#236500}.bad{color:#a33021}
 @media (max-width:1000px){.layout,.accusation-fields{grid-template-columns:1fr}.wrap{padding:18px}.panel{padding:18px}}
 @media (max-width:560px){.header{padding-top:4px}.logo{width:52px;height:52px}.actions button{flex:1 1 130px}.grid th.side{width:120px}}
 </style>
@@ -65,6 +65,11 @@ button:focus-visible,select:focus-visible,.grid-btn:focus-visible{outline:3px so
       <h3>Deduction notebook</h3>
       <div class="note">Mark each relationship directly in the combined grid.</div>
       <div class="notebook-wrap" id="notebook"></div>
+      <div class="legend" aria-label="Notebook mark key">
+        <span class="dot"><span class="state-mark question" aria-label="unknown" title="unknown">?</span> unknown</span>
+        <span class="dot"><span class="state-mark check" aria-label="yes" title="yes">✓</span> yes</span>
+        <span class="dot"><span class="state-mark cross" aria-label="no" title="no">✗</span> no</span>
+      </div>
     </section>
 
     <section class="panel accusation">
@@ -77,17 +82,10 @@ button:focus-visible,select:focus-visible,.grid-btn:focus-visible{outline:3px so
       </div>
       <div class="actions">
         <button class="primary" onclick="checkAnswer()">Check Answer</button>
-        <button onclick="checkNotebook()">Notebook status</button>
         <button onclick="resetAll()">Reset grid</button>
-        <button onclick="copyState()">Copy state</button>
         <button onclick="reveal()">Reveal answer</button>
       </div>
       <div id="result" class="result"></div>
-      <div class="legend">
-        <span class="dot"><strong>?</strong> unknown</span>
-        <span class="dot"><strong>✓</strong> yes</span>
-        <span class="dot"><strong>✗</strong> no</span>
-      </div>
     </section>
 
     <div class="footer">Dynavics MURDLE · __EDITION__ edition · offline and self-contained.
@@ -110,14 +108,22 @@ function setCell(matrix,r,c,val){
   matrix[r][c] = val;
 }
 
+function isLockedByConfirmedPair(matrix, row, column){
+  return matrix[row].some((value, index)=>index!==column && value===1)
+    || matrix.some((values, index)=>index!==row && values[column]===1);
+}
+
 function notebookButton(matrix, row, column, label){
   const cell = matrix[row][column];
+  const locked = isLockedByConfirmedPair(matrix, row, column);
+  const displayState = locked ? -1 : cell;
   const button = document.createElement('button');
   button.type='button';
   button.className='grid-btn';
-  button.dataset.state = String(cell);
-  button.textContent = cell===1 ? '✓' : (cell===-1 ? '✗' : (cell===2 ? '?' : ''));
-  button.setAttribute('aria-label', `${label} is ${cell===1?'checked':cell===-1?'crossed out':cell===2?'questioned':'blank'}.`);
+  button.dataset.state = String(displayState);
+  button.textContent = displayState===1 ? '✓' : (displayState===-1 ? '✗' : (displayState===2 ? '?' : ''));
+  button.disabled = locked;
+  button.setAttribute('aria-label', `${label} is ${locked ? 'locked out by a confirmed pairing' : cell===1?'checked':cell===-1?'crossed out':cell===2?'questioned':'blank'}.`);
   button.onclick = ()=>{
     setCell(matrix, row, column, cell===0 ? -1 : (cell===-1 ? 1 : (cell===1 ? 2 : 0)));
     renderAll();
@@ -137,10 +143,10 @@ function renderNotebook(){
   tb.className='notebook-grid';
   const n = PUZZLE.suspects.length;
   const columns = document.createElement('colgroup');
-  for(let index=0;index<(n*2)+1;index++){
+  for(let index=0;index<(n*2)+2;index++){
     const col = document.createElement('col');
-    const unit = 100 / ((n*2)+1.3);
-    col.style.width = `${index===0 ? unit*1.3 : unit}%`;
+    const unit = 100 / ((n*2)+2.3);
+    col.style.width = `${index===0 ? unit*.65 : index===1 ? unit*1.65 : unit}%`;
     columns.appendChild(col);
   }
   tb.appendChild(columns);
@@ -148,21 +154,24 @@ function renderNotebook(){
   const groups = document.createElement('tr');
   const corner = document.createElement('th');
   corner.rowSpan=2;
+  corner.colSpan=2;
   corner.className='notebook-group';
   groups.appendChild(corner);
   [['Suspects',n],['Locations',n]].forEach(([label,span])=>{
     const heading = document.createElement('th');
-    heading.className='notebook-group';
+    heading.className=`notebook-group${label==='Locations' ? ' notebook-column-separator' : ''}`;
     heading.colSpan=span;
     heading.textContent=label;
     groups.appendChild(heading);
   });
   thead.appendChild(groups);
   const headings = document.createElement('tr');
-  [...PUZZLE.suspects,...PUZZLE.rooms].forEach(label=>{
+  [...PUZZLE.suspects,...PUZZLE.rooms].forEach((label,index)=>{
     const heading = document.createElement('th');
-    heading.className='notebook-heading';
+    heading.className=`notebook-heading${index===n ? ' notebook-column-separator' : ''}`;
     heading.textContent=label;
+    heading.title=label;
+    heading.setAttribute('aria-label', label);
     headings.appendChild(heading);
   });
   thead.appendChild(headings);
@@ -171,17 +180,36 @@ function renderNotebook(){
 
   PUZZLE.weapons.forEach((weapon, weaponIndex)=>{
     const tr = document.createElement('tr');
+    if(weaponIndex===0){
+      const group = document.createElement('th');
+      group.className='notebook-row-group';
+      group.rowSpan=n;
+      group.textContent='Weapons';
+      tr.appendChild(group);
+    }
     const head = document.createElement('th');
     head.className='notebook-side';
     head.textContent = weapon;
     tr.appendChild(head);
     PUZZLE.suspects.forEach((suspect,suspectIndex)=>tr.appendChild(notebookCell(gridWeapon,suspectIndex,weaponIndex,`${suspect} with ${weapon}`)));
-    PUZZLE.rooms.forEach((room,roomIndex)=>tr.appendChild(notebookCell(gridWeaponRoom,weaponIndex,roomIndex,`${weapon} with ${room}`)));
+    PUZZLE.rooms.forEach((room,roomIndex)=>{
+      const cell = notebookCell(gridWeaponRoom,weaponIndex,roomIndex,`${weapon} with ${room}`);
+      if(roomIndex===0) cell.classList.add('notebook-column-separator');
+      tr.appendChild(cell);
+    });
     tbody.appendChild(tr);
   });
 
   PUZZLE.rooms.forEach((room, roomIndex)=>{
     const tr = document.createElement('tr');
+    if(roomIndex===0) tr.className='notebook-row-separator';
+    if(roomIndex===0){
+      const group = document.createElement('th');
+      group.className='notebook-row-group';
+      group.rowSpan=n;
+      group.textContent='Locations';
+      tr.appendChild(group);
+    }
     const head = document.createElement('th');
     head.className='notebook-side';
     head.textContent=room;
@@ -189,7 +217,7 @@ function renderNotebook(){
     PUZZLE.suspects.forEach((suspect,suspectIndex)=>tr.appendChild(notebookCell(gridRoom,suspectIndex,roomIndex,`${suspect} at ${room}`)));
     if(roomIndex===0){
       const inactive = document.createElement('td');
-      inactive.className='notebook-inactive';
+      inactive.className='notebook-inactive notebook-column-separator';
       inactive.rowSpan=n;
       inactive.colSpan=n;
       inactive.innerHTML='<div><strong>DYNAVICS</strong><span>Notebook space</span></div>';
@@ -296,29 +324,19 @@ function checkAnswer(){
   }
 }
 
-function checkNotebook(){
-  setResult('Your notebook uses manual marks: blank → X → check → ?.');
-}
-
 function resetAll(){
   gridWeapon = createMatrix(PUZZLE.suspects.length);
   gridRoom = createMatrix(PUZZLE.suspects.length);
   gridWeaponRoom = createMatrix(PUZZLE.weapons.length, PUZZLE.rooms.length);
   document.querySelectorAll('#clues input[type=checkbox]').forEach(ch=>{ ch.checked=false; ch.disabled=false; ch.closest('.clue').classList.remove('complete'); });
   renderAll();
-  setResult('Notebook reset to blank. Each cell cycles blank → X → check → ?.');
+  setResult('Notebook reset to blank.');
 }
 
 function reveal(){
   if (!confirm('Reveal the official solution?')) return;
   const s = PUZZLE.solution;
   setResult(`Solution revealed: ${s.suspect} with ${s.weapon} in ${s.room}.` );
-}
-
-function copyState(){
-  const data = {mode:PUZZLE.mode, sw:gridWeapon, sr:gridRoom, wr:gridWeaponRoom};
-  if (!navigator.clipboard) { setResult('Clipboard unavailable in this browser.'); return; }
-  navigator.clipboard.writeText(JSON.stringify(data)).then(()=>setResult('Current notebook state copied.'));
 }
 
 function escapeHtml(str){

@@ -1,0 +1,66 @@
+{
+  "mode": "standard",
+  "edition": "Standard",
+  "title": "Standard MURDLE — Release Day",
+  "subtitle": "Standard mode: 5 suspects, 5 weapons, 5 locations",
+  "storyTitle": "The Case of the Corrupted Package",
+  "storyHtml": "<p>A release package was corrupted just before deployment. Five Dynavics specialists were working across the office, each with a different item.</p><p><strong>Find</strong> who caused the failure, what they used, and where it happened.</p>",
+  "clues": [
+    {
+      "text": "Finn was in the Test Lab."
+    },
+    {
+      "text": "The USB Key was used in the Test Lab."
+    },
+    {
+      "text": "Ruby was in the Boardroom with the Tablet."
+    },
+    {
+      "text": "Theo worked in the App Studio."
+    },
+    {
+      "text": "The Scanner was in the App Studio."
+    },
+    {
+      "text": "Nina carried the Laptop."
+    },
+    {
+      "text": "The Laptop was in the Support Hub."
+    },
+    {
+      "text": "Eli carried the Cable."
+    },
+    {
+      "text": "The Cable was not in the Demo Suite."
+    },
+    {
+      "text": "The Notebook was found in the Demo Suite."
+    }
+  ],
+  "suspects": [
+    "Ruby",
+    "Finn",
+    "Theo",
+    "Nina",
+    "Eli"
+  ],
+  "weapons": [
+    "Tablet",
+    "USB Key",
+    "Scanner",
+    "Laptop",
+    "Cable"
+  ],
+  "rooms": [
+    "Boardroom",
+    "Test Lab",
+    "App Studio",
+    "Support Hub",
+    "Demo Suite"
+  ],
+  "solution": {
+    "suspect": "Finn",
+    "weapon": "USB Key",
+    "room": "Test Lab"
+  }
+}

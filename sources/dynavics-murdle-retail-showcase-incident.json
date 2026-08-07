@@ -5,16 +5,16 @@
   "storyHtml": "<p>A client retail showcase failed during a Dynavics demonstration, leaving a critical LS Central configuration in the wrong state. The evidence points to one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Trace the Business Central and LS Central activity to resolve the incident.</p>",
   "clues": [
     {
-      "text": "The LS Central POS Terminal was not in the Client Launch Room."
+      "text": "Ian Storer used the Data Migration Package in the Client Launch Room."
     },
     {
-      "text": "Kieran Coles was in the Partner Demo Suite."
+      "text": "Dan Jones used the Integration Test Device in the Support Hub."
     },
     {
-      "text": "Adam Sellers was moving the LS Central POS Terminal."
+      "text": "Adam Sellers was moving the LS Central POS Terminal in the Retail Experience Lab."
     },
     {
-      "text": "Ian Storer was working with the Data Migration Package."
+      "text": "Kieran Coles filed the Support Escalation Note from the Partner Demo Suite."
     },
     {
       "text": "The disrupted retail showcase was in the Retail Experience Lab."

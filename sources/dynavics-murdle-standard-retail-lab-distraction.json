@@ -5,19 +5,16 @@
   "storyHtml": "<p>A distracting alert storm hit the Dynavics service desk while a critical LS Central retail configuration changed unexpectedly. The incident was traced to one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Use the Business Central and LS Central evidence to close the case.</p>",
   "clues": [
     {
-      "text": "Adam Sellers was preparing the API integration brief."
+      "text": "Ian Storer was preparing the API integration brief in the Project Room."
     },
     {
-      "text": "The Business Central laptop was not in the Support Hub."
+      "text": "Rob Jones used the LS Central handheld in the Support Hub."
     },
     {
-      "text": "Kieran Coles was working on the AL extension."
+      "text": "Kieran Coles was working on the Business Central laptop in the LS Central Retail Lab."
     },
     {
-      "text": "Kieran Coles was in the Business Central Sandbox."
-    },
-    {
-      "text": "The Business Central laptop was in the LS Central Retail Lab."
+      "text": "Adam Sellers was working on the AL extension in the Business Central Sandbox."
     },
     {
       "text": "The incident was detected in the LS Central Retail Lab."
@@ -42,7 +39,7 @@
     "Business Central Sandbox"
   ],
   "solution": {
-    "suspect": "Ian Storer",
+    "suspect": "Kieran Coles",
     "weapon": "Business Central Laptop",
     "room": "LS Central Retail Lab"
   }

@@ -5,25 +5,19 @@
   "storyHtml": "<p>A misleading access alert drew the Dynavics team into a frantic investigation while a partner configuration was changed elsewhere. The evidence identifies one consultant, one tool, and one workspace.</p><p>Each consultant had one tool in one location. Follow the Business Central and LS Central trail to isolate the culprit.</p>",
   "clues": [
     {
-      "text": "Rob Jones was in the Architecture Studio."
+      "text": "Dan Jones used the Business Central debugger in the Project Room."
     },
     {
-      "text": "Kieran Coles was at the Client Demo Suite."
+      "text": "Kieran Coles used the LS Central handheld in the Client Demo Suite."
     },
     {
-      "text": "The Data Migration Toolkit was used in the Support Hub."
+      "text": "Rob Jones prepared the API integration brief in the Architecture Studio."
     },
     {
-      "text": "Dan Jones was not in the Partner Portal."
+      "text": "Adam Sellers connected the Production Deployment Laptop through the Partner Portal."
     },
     {
-      "text": "Ian Storer was assigned the Data Migration Toolkit."
-    },
-    {
-      "text": "Rob Jones was preparing the API Integration Brief."
-    },
-    {
-      "text": "The Production Deployment Laptop was connected through the Partner Portal."
+      "text": "Ian Storer used the Data Migration Toolkit in the Support Hub."
     }
   ],
   "suspects": [

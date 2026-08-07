@@ -1,0 +1,68 @@
+{
+  "title": "MURDLE — Murder at the Investigation Institute",
+  "subtitle": "4 suspects, 4 weapons, 4 locations, 4 motives",
+  "storyTitle": "The Murder of the Theoretical Theologist",
+  "storyHtml": "<p>Deductive Logico was called to the Investigation Institute, where a theoretical theologist had been murdered.</p><p>Each suspect brought one weapon to one location and had one motive, but only one was the murderer.</p><p>Logico examined the clues and questioned the suspects, knowing that exactly one of them was lying.</p>",
+  "clues": [
+    {
+      "text": "The Amazing Aureolin wanted to escape blackmail."
+    },
+    {
+      "text": "The person who wanted to see what it felt like to kill was in the Great Tower."
+    },
+    {
+      "text": "Analysts discovered traces of a weapon made of oil on Dr. Crimson’s clothing."
+    },
+    {
+      "text": "Chancellor Tuscany had not been in the Observatory."
+    },
+    {
+      "text": "The Amazing Aureolin said that Principal Applegreen was not in the Great Tower."
+    },
+    {
+      "text": "Principal Applegreen claimed that Chancellor Tuscany brought the Crystal Dagger."
+    },
+    {
+      "text": "Chancellor Tuscany said that The Amazing Aureolin was in the Grand Chateau."
+    },
+    {
+      "text": "Dr. Crimson said that The Amazing Aureolin was not in the Observatory."
+    },
+    {
+      "text": "Exactly one suspect was lying."
+    },
+    {
+      "text": "The Crystal Ball was clearly used to commit the murder."
+    }
+  ],
+  "suspects": [
+    "Chancellor Tuscany",
+    "Amazing Aureolin",
+    "Dr. Crimson",
+    "Principal Applegreen"
+  ],
+  "weapons": [
+    "Crystal Dagger",
+    "Crystal Ball",
+    "Allergenic Oil",
+    "Exploding Pipe"
+  ],
+  "rooms": [
+    "Mini Golf Course",
+    "Grand Chateau",
+    "Observatory",
+    "Great Tower"
+  ],
+  "motives": [
+    "To Experience Killing",
+    "To Escape Blackmail",
+    "To Hide an Affair",
+    "To Rob the Victim"
+  ],
+  "solution": {
+    "suspect": "Principal Applegreen",
+    "weapon": "Crystal Ball",
+    "room": "Mini Golf Course",
+    "motive": "To Rob the Victim"
+  }
+}
